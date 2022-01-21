@@ -1,24 +1,23 @@
 
 import { QueryClient, QueryClientProvider } from 'react-query';
-import Home from './components/Home';
-
 // 1. import `ChakraProvider` component
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider, GlobalStyle } from '@chakra-ui/react';
 
-function App() {
+import theme from './styles/theme';
+import { Nav } from './components/Nav';
+import Home from './components/Home/Home';
 
+const App = () => {
   const queryClient = new QueryClient();
   
   return (
     <QueryClientProvider client={queryClient}>
-
-    <ChakraProvider>
-        <div>
-          <Home/>
-        </div>
-    </ChakraProvider>
+      <ChakraProvider theme={theme}>
+        <GlobalStyle />
+        <Nav />
+        <Home />
+      </ChakraProvider>
     </QueryClientProvider>
-
   )
 };
 
