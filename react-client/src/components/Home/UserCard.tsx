@@ -7,7 +7,7 @@ import {
     Text,
     useColorModeValue,
 } from '@chakra-ui/react';
-import { User } from '../models/User';
+import { User } from '../../models/User';
 
 export const UserCard = (user: User) => {
     return (

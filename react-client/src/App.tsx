@@ -4,7 +4,7 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { ChakraProvider, GlobalStyle } from '@chakra-ui/react';
 
 import theme from './styles/theme';
-import { Nav } from './components/Nav';
+import { Nav } from './components/common/Nav';
 import Home from './components/Home/Home';
 
 const App = () => {

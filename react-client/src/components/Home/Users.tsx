@@ -1,7 +1,7 @@
 
-import { useUsers } from '../UsersRequest';
+import { useUsers } from './UsersRequest';
 import { User } from '../../models/User'
-import { UserCard } from '../UserCard';
+import { UserCard } from './UserCard';
 
 function Users() {
 
