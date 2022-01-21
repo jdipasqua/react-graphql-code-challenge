@@ -20,7 +20,6 @@ export function useUsers() {
           }
         `
       );
-      console.log(data);
       return data;
     });
 };

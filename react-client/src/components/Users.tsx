@@ -1,11 +1,10 @@
 
 import { useUsers } from './UsersRequest';
+import {User} from './../models/User'
 
 function Users() {
 
     const {isLoading, data, status, error} = useUsers();
-  
-    console.log(data);
   
   return (
   
@@ -14,7 +13,7 @@ function Users() {
     <p>{status}</p>
   
     <div>
-        {data && data?.users?.map((user: any) => {
+        {data && data?.users?.map((user: User) => {
         return <p>{user.name}</p>})}
     </div>
     
