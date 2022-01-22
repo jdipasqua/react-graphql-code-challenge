@@ -8,4 +8,5 @@ type User {
   email: String!
   phone: String!
   password: String!
+  img: String!
 }
