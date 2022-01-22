@@ -13,6 +13,18 @@ import { Route, Routes } from 'react-router-dom';
 const App = () => {
   const queryClient = new QueryClient();
 
+  let msg = '%c What\'s up? 🤙🏽 ! Welcome to my challenge!';
+  let styles = [
+    'font-size: 12px',
+    'font-family: monospace',
+    'background: white',
+    'display: inline-block',
+    'color: black',
+    'padding: 8px 19px',
+    'border: 1px dashed;'
+  ].join(';')
+  console.log(msg, styles);
+
   return (
     <QueryClientProvider client={queryClient}>
       <ChakraProvider theme={theme}>
