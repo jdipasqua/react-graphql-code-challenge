@@ -3,6 +3,10 @@ import request, { gql } from "graphql-request";
 
 const API_URL = `http://localhost:4000/`;
 
+/**
+ * This is as a middle service to call the API 
+ * @returns a resquest objet
+ */
 export const useUsers = () => {
   return useQuery("users", async () => {
     const data = await request(

@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import { User } from '../../models/User'
-import { UserCard } from './UserCard';
+
 import UsersCardView from './UsersCardView';
 import { useUsers } from './UsersRequest';
 import { Switch } from '@chakra-ui/react'
+import UsersTableView from './UsersTableView';
 
 function Users() {
 
-  const [tableView, setTableView] = useState(false);
+  const [tableView, setTableView] = useState(true);
 
   const { isLoading, data, error } = useUsers();
 
@@ -21,10 +21,10 @@ function Users() {
 
   return (
     <>
-      {tableView ? <>Cards View</> : <>Table View</>}
+      Cards View
       <Switch id='email-alerts'
         onChange={swicthChange} />
-      {tableView ? <div>table</div> :
+      {tableView ? <UsersTableView users={data?.users} /> :
         <UsersCardView users={data?.users}></UsersCardView>}
     </>)
 };
