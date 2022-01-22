@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import UsersCardView from './UsersCardView';
 import { useUsers } from './UsersRequest';
-import { Switch } from '@chakra-ui/react'
+import { FormControl, FormLabel, Switch } from '@chakra-ui/react'
 import UsersTableView from './UsersTableView';
 
 function Users() {
@@ -21,9 +21,13 @@ function Users() {
 
   return (
     <>
-      Cards View
-      <Switch id='email-alerts'
-        onChange={swicthChange} />
+      <FormControl display='flex' alignItems='center'>
+        <FormLabel htmlFor='cards-view' mb='0'>
+          Cards View
+        </FormLabel>
+        <Switch id='email-alerts'
+          onChange={swicthChange} />
+      </FormControl>
       {tableView ? <UsersTableView users={data?.users} /> :
         <UsersCardView users={data?.users}></UsersCardView>}
     </>)

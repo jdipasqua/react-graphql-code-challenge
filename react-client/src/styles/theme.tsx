@@ -1,10 +1,7 @@
 import { extendTheme } from '@chakra-ui/react'
 
 const theme = extendTheme({
-    fonts: {
-        heading: 'Open Sans',
-        body: 'Raleway',
-    },
+
     colors: {
         brand: {
             900: '#1a365d',
