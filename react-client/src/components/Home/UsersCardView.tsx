@@ -8,12 +8,10 @@ import { UserCard } from './UserCard';
  */
 const UsersCardView = ({users}: {users: User[]}) => {
 
-    console.log(users)
-
   return (
     <div>
       {users && users?.map((user: User) => {
-        return <UserCard {...user} />
+        return <UserCard key={user.id} {...user} />
       })};
     </div>)
 };

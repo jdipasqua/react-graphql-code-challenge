@@ -26,17 +26,17 @@ export const CustomGrid: React.FC<Props> = (props) => {
             <TableCaption>{props.title}</TableCaption>
             <Thead>
                 <Tr>
-                    {props.columns.map(col => <Th>{col.label}</Th>)}
+                    {props.columns.map((col, index) => <Th key={col.key + '_' + index + '_up'} >{col.label}</Th>)}
                 </Tr>
             </Thead>
             <Tbody>
-                {props.data.map(item => <Tr>
-                    {props.columns.map(col => <Td> {item[col.key]}</Td>)}
+                {props.data.map((item, index) => <Tr key={index + '_data'}>
+                    {props.columns.map((col, index) => <Td key={item[col.key] + '_' + index}> {item[col.key]}</Td>)}
                 </Tr>)}
             </Tbody>
             <Tfoot>
                 <Tr>
-                    {props.columns.map(col => <Th>{col.label}</Th>)}
+                    {props.columns.map((col, index) => <Th key={col.key + '_' + index + '_down'}>{col.label}</Th>)}
                 </Tr>
             </Tfoot>
         </Table>

@@ -68,7 +68,7 @@ export const Nav = () => {
                                     minW={0}>
                                     <Avatar
                                         size={'sm'}
-                                        src={'https://avatars.dicebear.com/api/male/username.svg'}
+                                        src={'https://bit.ly/broken-link'}
                                     />
                                 </MenuButton>
                                 <MenuList alignItems={'center'}>
@@ -76,7 +76,7 @@ export const Nav = () => {
                                     <Center>
                                         <Avatar
                                             size={'2xl'}
-                                            src={'https://avatars.dicebear.com/api/male/username.svg'}
+                                            src={'https://bit.ly/broken-link'}
                                         />
                                     </Center>
                                     <br />
