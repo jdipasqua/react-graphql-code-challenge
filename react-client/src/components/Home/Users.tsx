@@ -45,17 +45,16 @@ function Users() {
 
   return (
     <>
-      <Wrap>
-        <WrapItem>
-          <FormControl display='flex' alignItems='center'>
+      <Wrap style={{ marginTop: 15, marginBottom: 15, marginLeft: 15 }}>
+        <WrapItem justify='left'>
+          <FormControl style={{ marginTop: 7}} display='flex' alignItems='center'>
             <FormLabel htmlFor='cards-view' mb='0'>
               Cards View
             </FormLabel>
-            <Switch id='email-alerts'
-              onChange={swicthChange} />
+            <Switch  id='email-alerts' onChange={swicthChange}/>
           </FormControl>
         </WrapItem>
-        <WrapItem>
+        <WrapItem style={{marginLeft: 'auto', marginRight: 20}}>
           <InputGroup>
             <InputLeftElement
               pointerEvents='none'
