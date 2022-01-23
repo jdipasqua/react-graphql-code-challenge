@@ -1,6 +1,7 @@
 import { render } from "@testing-library/react";
 import { User } from "../../../models/User";
 import UsersCardView from "../UsersCardView";
+import UsersTableView from "../UsersTableView";
 
 const users: User[] = [{
     id: 'da921a0c-3d85-4705-bd0c-11371186d625',
@@ -20,16 +21,20 @@ const users: User[] = [{
 }];
 
 
-describe('UsersCardView Test Case', () => {
+describe('UsersCardTable Test Case', () => {
 
 
     //testing that the both users are rendering
-    it('should render the UsersCardView', async() => {
-        const {getByText} = await render(<UsersCardView users={users} />);
+    it('should render the UsersTableView', async() => {
+        const {getByText} = await render(<UsersTableView users={users} />);
+        
+        const title = getByText(/Users/i);       
+
         const name = getByText(/Sam Black/i);       
 
         const nameV = getByText(/Vishwas Raman/i);       
 
+        expect(title).toBeInTheDocument;
         expect(name).toBeInTheDocument;
         expect(nameV).toBeInTheDocument;
     })
