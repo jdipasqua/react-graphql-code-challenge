@@ -54,8 +54,8 @@ export const Nav = () => {
 
                     <Flex alignItems={'center'}>
                         <Stack direction={'row'} spacing={7}>
-                            <Button onClick={toggleColorMode}>
-                                {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+                            <Button data-testid="theme-button" onClick={toggleColorMode}>
+                                {colorMode === 'light' ? <MoonIcon data-testid="moon-icon" /> : <SunIcon data-testid="sun-icon" />}
                             </Button>
 
                             <Menu>
