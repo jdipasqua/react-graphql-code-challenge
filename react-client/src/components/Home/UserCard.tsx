@@ -1,3 +1,4 @@
+import { AtSignIcon, PhoneIcon } from '@chakra-ui/icons';
 import {
     Center,
     Flex,
@@ -13,8 +14,6 @@ export const UserCard = (user: User) => {
     return (
         <Center py={6}>
             <Stack
-                borderWidth="1px"
-                borderRadius="lg"
                 w={{ sm: '100%', md: '540px' }}
                 height={{ sm: '476px', md: '20rem' }}
                 direction={{ base: 'column', md: 'row' }}
@@ -39,12 +38,14 @@ export const UserCard = (user: User) => {
                         {user.name}
                     </Heading>
                     <Text fontWeight={600} color={'gray.500'} mb={4}>
-                        @{user.name.toLowerCase().replace(/\s/g, '')}
+                        <AtSignIcon />
+                        {user.name.toLowerCase().replace(/\s/g, '')}
                     </Text>
                     <Text
                         textAlign={'center'}
                         color={useColorModeValue('gray.700', 'gray.400')}
                         px={3}>
+                        <PhoneIcon />
                         {user.phone}
                     </Text>
                 </Stack>
