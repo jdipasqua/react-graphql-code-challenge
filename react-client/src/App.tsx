@@ -9,7 +9,6 @@ import Home from './components/home/Home';
 import { Route, Routes } from 'react-router-dom';
 
 
-
 const App = () => {
   const queryClient = new QueryClient();
 

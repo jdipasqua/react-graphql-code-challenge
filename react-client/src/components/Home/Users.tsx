@@ -2,12 +2,16 @@ import { useEffect, useState } from 'react';
 
 import UsersCardView from './UsersCardView';
 import { useUsers } from './UsersRequest';
-import { FormControl, FormLabel, Input, InputGroup, InputLeftElement, Switch, Wrap, WrapItem } from '@chakra-ui/react'
+import {
+  FormControl, FormLabel, Input, InputGroup,
+  InputLeftElement, Spinner, Switch, Wrap, WrapItem
+} from '@chakra-ui/react'
 import UsersTableView from './UsersTableView';
 import { SearchIcon } from '@chakra-ui/icons';
 import { User } from '../../models/User';
+import { CustomAlertComponent } from '../share/CustomAlertComponent';
 
-function Users() {
+const Users = () => {
 
   const [tableView, setTableView] = useState(true);
 
@@ -18,16 +22,28 @@ function Users() {
   useEffect(() => {
     if (data)
       setUsers(data.users);
-  }, [data])
+  }, [data]);
 
-  if (isLoading) return <div>Loading...</div>
+  if (isLoading) return (
+    <Spinner
+      thickness='4px'
+      speed='0.65s'
+      emptyColor='gray.200'
+      color='blue.500'
+      size='xl'
+      position={'fixed'}
+      top={'30%'}
+      left={'50%'} />);
 
-  if (error) return <div>Error</div>
+
+  if (error) return (<CustomAlertComponent
+    status={'error'}
+    title={'Your connection is outdated!'}
+    description={'Your experience may be degraded'}/>);
 
   const swicthChange = () => {
     setTableView(!tableView);
   }
-
 
   /**
    * 
@@ -36,6 +52,7 @@ function Users() {
    */
   const searchChange = (event: any) => {
     let value = event.target.value;
+
     let resurt = data.users.filter((item: User) => (
       item.name.toLowerCase() + item.email.toLowerCase()).indexOf(value.toLowerCase()) > -1
     );
@@ -46,15 +63,17 @@ function Users() {
   return (
     <>
       <Wrap style={{ marginTop: 15, marginBottom: 15, marginLeft: 15 }}>
+
         <WrapItem justify='left'>
-          <FormControl style={{ marginTop: 7}} display='flex' alignItems='center'>
+          <FormControl style={{ marginTop: 7 }} display='flex' alignItems='center'>
             <FormLabel htmlFor='cards-view' mb='0'>
               Cards View
             </FormLabel>
-            <Switch  id='email-alerts' onChange={swicthChange}/>
+            <Switch id='card-view' onChange={swicthChange} />
           </FormControl>
         </WrapItem>
-        <WrapItem style={{marginLeft: 'auto', marginRight: 20}}>
+
+        <WrapItem style={{ marginLeft: 'auto', marginRight: 20 }}>
           <InputGroup>
             <InputLeftElement
               pointerEvents='none'
@@ -65,9 +84,8 @@ function Users() {
         </WrapItem>
       </Wrap>
 
-      {tableView ? <UsersTableView users={users} /> :
-        <UsersCardView users={users}></UsersCardView>}
-    </>)
+      {tableView ? <UsersTableView users={users} /> : <UsersCardView users={users} />}
+    </>);
 };
 
 export default Users;

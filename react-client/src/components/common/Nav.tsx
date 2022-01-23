@@ -33,7 +33,6 @@ const NavLink = ({ children }: { children: ReactNode }) => (
 
 const Links = ['Home'];
 
-
 export const Nav = () => {
     const { colorMode, toggleColorMode } = useColorMode();
     return (
@@ -81,7 +80,7 @@ export const Nav = () => {
                                     </Center>
                                     <br />
                                     <Center>
-                                        <p>Hi...!</p>
+                                        <p>What's up? 🤙🏽</p>
                                     </Center>
                                 </MenuList>
                             </Menu>
