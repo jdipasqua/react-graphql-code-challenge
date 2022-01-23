@@ -1,6 +1,5 @@
 import { render } from "@testing-library/react";
 import { User } from "../../../models/User";
-import UsersCardView from "../UsersCardView";
 import UsersTableView from "../UsersTableView";
 
 const users: User[] = [{
@@ -37,5 +36,5 @@ describe('UsersCardTable Test Case', () => {
         expect(title).toBeInTheDocument;
         expect(name).toBeInTheDocument;
         expect(nameV).toBeInTheDocument;
-    })
+    });
 });

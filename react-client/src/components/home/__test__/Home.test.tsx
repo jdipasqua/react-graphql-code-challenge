@@ -15,7 +15,7 @@ jest.mock('../users', () => {
             return <div></div>
         }
     }
-})
+});
 
 describe('Home Test Unit Case', () => {
 

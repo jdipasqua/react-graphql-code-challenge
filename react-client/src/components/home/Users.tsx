@@ -69,7 +69,7 @@ const Users = () => {
             <FormLabel htmlFor='cards-view' mb='0'>
               Cards View
             </FormLabel>
-            <Switch id='card-view' onChange={swicthChange} />
+            <Switch data-testid="switch-table-view" id='card-view' onChange={swicthChange} />
           </FormControl>
         </WrapItem>
 

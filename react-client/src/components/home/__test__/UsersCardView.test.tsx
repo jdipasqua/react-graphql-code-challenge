@@ -22,15 +22,13 @@ const users: User[] = [{
 
 describe('UsersCardView Test Case', () => {
 
-
     //testing that the both users are rendering
     it('should render the UsersCardView', async() => {
         const {getByText} = await render(<UsersCardView users={users} />);
         const name = getByText(/Sam Black/i);       
-
         const nameV = getByText(/Vishwas Raman/i);       
 
         expect(name).toBeInTheDocument;
         expect(nameV).toBeInTheDocument;
-    })
+    });
 });
