@@ -48,6 +48,12 @@ export const UserCard = (user: User) => {
                         <PhoneIcon />
                         {user.phone}
                     </Text>
+                    <Text
+                        textAlign={'center'}
+                        color={useColorModeValue('gray.700', 'gray.400')}
+                        px={3}>
+                        {user.email}
+                    </Text>
                 </Stack>
             </Stack>
         </Center>
